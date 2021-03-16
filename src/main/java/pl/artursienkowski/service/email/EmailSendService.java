@@ -31,10 +31,7 @@ public class EmailSendService {
         Customer customer = customerRepository.findById(customerId).get();
 
         StringBuilder allAccessories = new StringBuilder();
-        for (
-                Accessories a : customer.getAccessories()) {
-            allAccessories.append(a.toString()).append(" | ");
-        }
+        customer.getAccessories().forEach(a -> allAccessories.append(a.toString()).append(" | "));
 
         String messageToCustomer = customer.getCar().toString() + " " + customer.getOffer().toString() + " " + allAccessories;
 

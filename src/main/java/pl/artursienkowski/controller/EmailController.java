@@ -42,7 +42,5 @@ public class EmailController {
         return "worker/emailAlert";
     }
 
-
-
 }
 
